@@ -46,7 +46,6 @@ Setup:
 - install the requirements pip install -r requirements.txt
 - run the app e.g. `python app.py`
 - app should be available at http://127.0.0.1:5000
-
 ### How to run this api
 1. Use this curl command to get the pixel coordinates for the input:
 ```bash
@@ -59,4 +58,20 @@ curl --request POST 'http://127.0.0.1:5000/' \
 ```
 - "img_size" denotes the (1) Image dimensions 
 - "corner_points" denotes (2) Corner Points.
+
+### How to build docker image
+Requirements:
+- Docker
+
+Build docker image: 
+```bash
+docker build -t fetch_reward .
+```
+
+Run docker image:
+```bash
+docker run -it -p 5000:5000 fetch_reward
+```
+
+
 

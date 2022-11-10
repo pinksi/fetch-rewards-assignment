@@ -6,9 +6,7 @@ from loguru import logger
 # corner_points = [ (3, 1), (1, 1), (3, 3), (1, 3)]
 
 # img_size = (10, 12) # row, col
-# corner_points = [(4.0, 1.5), (1.5, 1.5),  # (x, y)
-#     (4.0, 8.0),(1.5, 8.0),  # (x, y)
-#     ]
+# corner_points = [(4.0, 1.5), (1.5, 1.5), (4.0, 8.0),(1.5, 8.0)]
 
 def find_edge_points(corner_points: list)-> tuple:
     """
