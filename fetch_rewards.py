@@ -1,17 +1,25 @@
 import numpy as np
 from loguru import logger
 
-
-img_size = (3, 3) # row, col
-corner_points = [ (3, 1), (1, 1), (3, 3), (1, 3)]
+# test-cases
+# img_size = (3, 3) # row, col
+# corner_points = [ (3, 1), (1, 1), (3, 3), (1, 3)]
 
 # img_size = (10, 12) # row, col
 # corner_points = [(4.0, 1.5), (1.5, 1.5),  # (x, y)
 #     (4.0, 8.0),(1.5, 8.0),  # (x, y)
 #     ]
 
-# determine bottom-left, top-right
-def find_edge_points(points):
+def find_edge_points(corner_points: list)-> tuple:
+    """
+    Determines the bottom-left and top-right from the given corner-points
+    Args:
+        corner_points: 
+            - 4 corner points of the displayed image
+            - list of tuples
+    Returns:
+        bottom_left, top_right - tuple, tuple
+    """
     x0 = min(list(map(lambda x: x[0], corner_points)))
     y0 = min(list(map(lambda x: x[1], corner_points)))
 
@@ -21,7 +29,17 @@ def find_edge_points(points):
     top_right = (x1, y1)
     return bottom_left, top_right
 
-def find_pixel_coords(img_size, corner_points): 
+def find_pixel_coords(img_size: tuple, corner_points: list) -> list: 
+    """
+    Calculates pixel coordinate values for an image
+    Args:
+        img_size: (tuple) height and width of the image 
+            - (x, y) - x rows, y columns
+
+        corner_points: 
+            - 4 corner points of the displayed image
+            - list of tuples
+    """
     if (img_size and not corner_points):
         logger.error("Error occurred in finding corner points.")
         return []
