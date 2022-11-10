@@ -48,6 +48,6 @@ def find_pixel_coords(img_size, corner_points):
 
     return list(pixel_coordinates)
 
-if __name__=="__main__":
-    res = find_pixel_coords(img_size, corner_points)
-    print(res)
+# if __name__=="__main__":
+#     res = find_pixel_coords(img_size, corner_points)
+#     print(res)
