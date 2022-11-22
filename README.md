@@ -38,6 +38,7 @@ Output:
 ### Setup
 Requirements:
 - virtualenv
+- python3.8.2
 
 Setup:
 - clone this repo
